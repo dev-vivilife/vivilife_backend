@@ -1,4 +1,4 @@
-const { db } = require("../index");
+const db = require("../config");
 const { v4: uuidv4 } = require("uuid");
 const BlogsRef = db.collection("Blogs");
 

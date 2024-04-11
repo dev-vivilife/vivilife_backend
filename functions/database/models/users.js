@@ -1,4 +1,4 @@
-const { db } = require("../firebase");
+const db = require("../config");
 
 const createUserIfNotExists = async (uid, email) => {
   const docRef = db.collection("users").doc(uid);
@@ -17,7 +17,6 @@ const createUserIfNotExists = async (uid, email) => {
 };
 
 const getUserByUid = async (uid) => {
-  console.log(uid);
   const docRef = db.collection("users").doc(uid);
   const doc = await docRef.get();
   if (!doc.exists) {
